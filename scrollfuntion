@@ -1,0 +1,7 @@
+document.querySelector('.container').addEventListener('scroll', function() {
+            this.style.transition = 'none';
+            clearTimeout(this.scrollTimeout);
+            this.scrollTimeout = setTimeout(() => {
+                this.style.transition = '';
+            }, 50);
+        });
