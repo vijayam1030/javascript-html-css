@@ -1,0 +1,18 @@
+// Get the textarea and its container
+var textarea = document.getElementById('P1_TEXTAREA');
+var maxLength = textarea.getAttribute('maxlength');
+
+// Get the counter element
+var counterElement = document.querySelector('#P1_TEXTAREA_container .apex-item-counter');
+
+// Function to update the character count display
+function updateCharacterCount() {
+    var currentLength = textarea.value.length;
+    counterElement.textContent = currentLength + '/' + maxLength + ' characters used';
+}
+
+// Run the function to set the initial state
+updateCharacterCount();
+
+// Add an event listener to update the counter as the user types
+textarea.addEventListener('keyup', updateCharacterCount);
